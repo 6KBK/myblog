@@ -87,7 +87,7 @@ _参考[这篇文章](https://blog.csdn.net/weixin_42350428/article/details/8166
 <img style="width: 909px;" src="https://img-blog.csdn.net/20180814144344470?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjM1MDQyOA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 
 &#8195;采用默认设置安装即可（_这里将安装位置改为`E:\program files\mysql_workbench_8`_）
-![软件界面](./mysql_task1_img/（1）.png) 
+![软件界面](./mysql_task1_img/1.2.1.png) 
 
 &#8195;点击local instance，输入密码后即可打开workbench的工作台：
 <img title="" alt="这里写图片描述" src="https://img-blog.csdn.net/20180814145115624?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjM1MDQyOA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
@@ -106,7 +106,7 @@ _参考[这篇文章](https://blog.csdn.net/weixin_42350428/article/details/8166
 &#8195;选择>选第一个选项，然后一路next到底，中途看到book数据库打勾 </br>
 <img title="" alt="这里写图片描述" src="https://img-blog.csdn.net/20180814160728985?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjM1MDQyOA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 &#8195;然后就可以看到结果了。</br>
-<img src="./mysql_task1_img/（2）.png"  alt="EER" />
+<img src="./mysql_task1_img/1.2.2.png"  alt="EER" />
 </div> 
 
 ---
@@ -3175,11 +3175,14 @@ left(str,len)|返回字符串str的左端len个字符
 
 
 </table>
+
+
 ### （8）SQL注释
 行内注释使用--（两个连字符）
 MySQL也支持使用“#”进行行内注释
 多行注释从/\*开始，到*/结束，/\*和*/之间的任何内容都是注释。
-多行注释可以在脚本的任何位置停止和开始。 
+多行注释可以在脚本的任何位置停止和开始.
+
 ###（9）SQL代码规范
 
 **代码美化的建议**
@@ -3236,9 +3239,21 @@ SELECT DISTINCT Email
 	            HAVING COUNT(Email) >= 2
                 );
 ```
----
-## 项目二
 
+输出结果：
+```
++---------+
+| Email   |
++---------+
+| a@b.com |
++---------+
+1 row in set (0.03 sec)
+```
+---
+</br>
+
+
+## 项目二
 ```sql
 -- 创建表
 CREATE TABLE World (
@@ -3271,4 +3286,16 @@ SELECT name, population, area
        gdp > 20000000
  ORDER BY name;
 
+```
+
+
+输出结果：
+```
++-------------+------------+---------+
+| name        | population | area    |
++-------------+------------+---------+    
+| Afghanistan |   25500100 |  652230 |    
+| Algeria     |   37100000 | 2381741 |    
++-------------+------------+---------+    
+2 rows in set (0.01 sec)
 ```
