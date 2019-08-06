@@ -3269,9 +3269,9 @@ SELECT e1.Email
 HAVING COUNT(e1.Email) >= 2;
 ```
 
-_很多时候，自联结比子查询更高效_
-_from on 语句是标准的SQL联结语句，尽量少用from where 联结_
-_sql中可省略AS_
+_很多时候，自联结比子查询更高效_</br>
+_from on 语句是标准的SQL联结语句，尽量少用from where 联结_</br>
+_sql中可省略AS_</br>
 
 ## 项目二
 ```sql
