@@ -3261,13 +3261,17 @@ USE test;
 
 --SQL查询
 SELECT e1.Email
-FROM email e1
-	INNER JOIN email e2 ON e1.ID = e2.ID
-GROUP BY e1.Email
+  FROM email e1
+       INNER JOIN 
+       email e2 
+    ON e1.ID = e2.ID
+ GROUP BY e1.Email
 HAVING COUNT(e1.Email) >= 2;
 ```
 
 _很多时候，自联结比子查询更高效_
+_from on 语句是标准的SQL联结语句，尽量少用from where 联结_
+_sql中可省略AS_
 
 ## 项目二
 ```sql
