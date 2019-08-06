@@ -3254,6 +3254,21 @@ SELECT DISTINCT Email
 </br>
 
 
+_项目一方法二（自联结）_
+```sql
+
+USE test;
+
+--SQL查询
+SELECT e1.Email
+FROM email e1
+	INNER JOIN email e2 ON e1.ID = e2.ID
+GROUP BY e1.Email
+HAVING COUNT(e1.Email) >= 2;
+```
+
+_很多时候，自联结比子查询更高效_
+
 ## 项目二
 ```sql
 -- 创建表
