@@ -3195,10 +3195,11 @@ MySQL也支持使用“#”进行行内注释
 * 子查询缩进并对齐
 
 **合理运用代码格式化工具**
-在线格式化工具有：
-tool.oschina.net/codeformat/sql
-https://tool.lu/sql/
-离线格式化工具：
+</br>
+在线格式化工具有：</br>
+tool.oschina.net/codeformat/sql </br>
+https://tool.lu/sql/ </br>
+离线格式化工具：</br>
 python的sqlparser包
 ```
 pip install  sqlparse
