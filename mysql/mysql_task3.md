@@ -117,7 +117,8 @@ VALUES ('6', '3.65');
 ```sql
 SELECT t2.score, t2.rank
 FROM score
-	INNER JOIN (
+	INNER JOIN 
+	(
 		SELECT score, @i := @i + 1 AS `rank`
 		FROM (
 			SELECT DISTINCT score
@@ -169,7 +170,7 @@ VALUES ('7', '2');
 ```sql
 
 
---不会了，先空着吧。。。
+--不会了，先空着吧,没有思路😭。。。
 
 
 ```
