@@ -61,11 +61,25 @@ VALUES ('4', 'Green');
 INSERT INTO seat
 VALUES ('5', 'Jeames');
 ```
+
+_[参考LeetCode626题](https://blog.csdn.net/qq_41822173/article/details/81013370)_
+
 查询语句：
 ```sql
---不会了，先空着吧。。。
-
-
+SELECT a.id, a.student
+FROM (
+	SELECT CASE 
+			WHEN id % 2 = 0 THEN id - 1
+			WHEN id % 2 != 0
+			AND id != (
+				SELECT COUNT(*)
+				FROM seat
+			) THEN id + 1
+			ELSE id
+		END AS id, student
+	FROM seat
+) a
+ORDER BY a.id;
 ```
 ---
 
@@ -191,8 +205,8 @@ VALUES ('5', '2');
 ```
 查询语句：
 ```sql
-SELECT DISTINCT t1.id
-	, CASE 
+SELECT DISTINCT t1.id，
+	CASE 
 		WHEN t1.p_id IS NULL THEN 'root'
 		WHEN t2.id IS NULL THEN 'leaf'
 		ELSE 'inner'
