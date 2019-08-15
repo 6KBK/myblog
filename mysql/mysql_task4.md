@@ -79,7 +79,7 @@ ORDER BY t1.a
 LIMIT 0, 1;
 
 ```
-
+---
 ## 项目十八
 
 插入数据：
@@ -119,62 +119,132 @@ WHERE t1.DepartmentId = t2.id
 ORDER BY t1.DepartmentId, t1.salary DESC;
 ```
 
-
+---
 ## 项目十九
-又不会了，好复杂
+
 
 建立表格：
 
 ```sql
+CREATE TABLE IF NOT EXISTS point_2d (
+	x int NOT NULL,
+	y int NOT NULL
+);
 
+INSERT INTO point_2d
+VALUES ('-1', '-1');
+
+INSERT INTO point_2d
+VALUES ('0', '0');
+
+INSERT INTO point_2d
+VALUES ('-1', '-2');
 
 ```
 查询语句：
 
 ```sql
-
+又不会了，好复杂
 ```
-
+---
 ## 项目二十
 
-头疼
-╯︿╰
+
 建立表格
 
 ```sql
+CREATE TABLE IF NOT EXISTS Users (
+	Users_Id int NOT NULL,
+	Banned enum('No', 'Yes') NOT NULL,
+	Role enum('client', 'driver', 'partner'),
+	PRIMARY KEY (Users_Id)
+);
 
+INSERT INTO Users
+VALUES ('1', 'No', 'client');
+
+INSERT INTO Users
+VALUES ('2', 'Yes', 'client');
+
+INSERT INTO Users
+VALUES ('3', 'No', 'client');
+
+INSERT INTO Users
+VALUES ('4', 'No', 'client');
+
+INSERT INTO Users
+VALUES ('10', 'No', 'driver');
+
+INSERT INTO Users
+VALUES ('11', 'No', 'driver');
+
+INSERT INTO Users
+VALUES ('12', 'No', 'driver');
+
+INSERT INTO Users
+VALUES ('13', 'No', 'driver');
+
+CREATE TABLE IF NOT EXISTS Trips (
+	id int NOT NULL,
+	Client_Id int NOT NULL,
+	Driver_Id int NOT NULL,
+	City_Id int NOT NULL,
+	Status enum('completed', 'cancelled_by_driver', 'cancelled_by_client') NOT NULL,
+	Request_at date NOT NULL,
+	FOREIGN KEY testfk1 (Client_Id) REFERENCES Users (Users_Id),
+	FOREIGN KEY testfk2 (Driver_Id) REFERENCES Users (Users_Id),
+	PRIMARY KEY (`id`)
+);
+
+INSERT INTO Trips
+VALUES ('1', '1', '10', '1', 'completed'
+	, '2013-10-01');
+
+INSERT INTO Trips
+VALUES ('2', '2', '11', '1', 'cancelled_by_driver'
+	, '2013-10-01');
+
+INSERT INTO Trips
+VALUES ('3', '3', '12', '6', 'completed'
+	, '2013-10-01');
+
+INSERT INTO Trips
+VALUES ('4', '4', '13', '6', 'cancelled_by_client'
+	, '2013-10-01');
+
+INSERT INTO Trips
+VALUES ('5', '1', '10', '1', 'completed'
+	, '2013-10-02');
+
+INSERT INTO Trips
+VALUES ('6', '2', '11', '6', 'completed'
+	, '2013-10-02');
+
+INSERT INTO Trips
+VALUES ('7', '3', '12', '6', 'completed'
+	, '2013-10-02');
+
+INSERT INTO Trips
+VALUES ('8', '2', '12', '12', 'completed'
+	, '2013-10-03');
+
+INSERT INTO Trips
+VALUES ('9', '3', '10', '12', 'completed'
+	, '2013-10-03');
+
+INSERT INTO Trips
+VALUES ('10', '4', '13', '12', 'cancelled_by_driver'
+	, '2013-10-03');
 
 ```
+[参考1](https://www.yiibai.com/mysql/foreign-key.html
+)
+[参考2](www.sohu.com/a/238219087_100192631
+)
+
+
 查询语句：
 
 ```sql
-
+╯︿╰
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
