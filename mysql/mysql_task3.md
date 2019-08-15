@@ -137,40 +137,47 @@ ORDER BY t2.score DESC;
 ## 项目十三
 建立表格：
 ```sql
-CREATE TABLE IF NOT EXISTS num (
+CREATE TABLE IF NOT EXISTS logs (
 	id int NOT NULL,
 	num int NOT NULL,
 	PRIMARY KEY (id)
 );
 
-INSERT INTO num
+INSERT INTO logs
 VALUES ('1', '1');
 
-INSERT INTO num
+INSERT INTO logs
 VALUES ('2', '1');
 
-INSERT INTO num
+INSERT INTO logs
 VALUES ('3', '1');
 
-INSERT INTO num
+INSERT INTO logs
 VALUES ('4', '2');
 
-INSERT INTO num
+INSERT INTO logs
 VALUES ('5', '1');
 
-INSERT INTO num
+INSERT INTO logs
 VALUES ('6', '2');
 
-INSERT INTO num
+INSERT INTO logs
 VALUES ('7', '2');
 
 ```
 
+**!!!**
 查询语句：
+
+>全连接三张**Logs**表，分别用来搜索连续三个数中的第一、二、三个数，检查是否相同。并且最后还要排除重复。
+
 ```sql
-
-
---不会了，先空着吧,没有思路😭。。。
+SELECT DISTINCT l1.Num AS ConsecutiveNums
+FROM Logs l1, Logs l2, Logs l3
+WHERE l1.Num = l2.Num
+	AND l2.Num = l3.Num
+	AND l1.Id = l2.Id - 1
+	AND l2.Id = l3.Id - 1;
 
 
 ```
