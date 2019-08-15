@@ -4,7 +4,7 @@
 ## 项目十六
 
 
-很简单，稍微改动即可
+很简单，项目12的语句稍微改动即可
 查询语句：
 ```sql
 SELECT t2.score, t2.rank
@@ -15,7 +15,7 @@ FROM score
 		FROM (
 			SELECT DISTINCT score
 			FROM score
-            group by score
+            GROUP BY score
 			ORDER BY score DESC
 		) temp, (
 				SELECT @i := 0
